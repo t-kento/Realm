@@ -9,6 +9,7 @@ class RealmApplication : Application() {
 
         // Realmの初期化
         Realm.init(this)
+
 //        val config = RealmConfiguration.Builder()
 ////            .deleteRealmIfMigrationNeeded() // FIXME:この処理はMigrationをやる際に消す場合に書く処理です、Migrationに関しては次回やりますね。
 //            .build()

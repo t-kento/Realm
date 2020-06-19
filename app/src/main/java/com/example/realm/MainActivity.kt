@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initialize()
-        initData()
     }
 
     private fun initialize() {
         initLayout()
+        initData()
     }
 
     private fun initLayout() {
@@ -81,7 +81,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initData() {
-        val list = ListObject.findAll()
-        customAdapter.refresh(list)
+        customAdapter.refresh(ListObject.findAll())
     }
 }

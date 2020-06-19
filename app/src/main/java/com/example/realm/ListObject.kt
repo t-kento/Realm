@@ -5,12 +5,14 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 
-open class ListObject: RealmObject() {
-    @PrimaryKey
+open class ListObject: RealmObject() { // メモ
+    @PrimaryKey // 主Key
     var id : Long = System.currentTimeMillis()
     var title = ""
 
+
     companion object {
+
         fun findAll(): List<ListObject> =
             Realm.getDefaultInstance().use { realm ->
                 realm.where(ListObject::class.java)
@@ -19,6 +21,16 @@ open class ListObject: RealmObject() {
                         realm.copyFromRealm(it)
                     }
             }
+
+        fun findBy(id: Long): ListObject? =
+            Realm.getDefaultInstance().use { realm ->
+            realm.where(ListObject::class.java)
+                .equalTo(ListObject::id.name, id)
+                .findFirst()
+                .let {
+                    realm.copyFromRealm(it)
+                }
+        }
 
         fun delete(data: ListObject) {
             Realm.getDefaultInstance().use {
