@@ -34,7 +34,9 @@ class CustomAdapter(private val context: Context): RecyclerView.Adapter<Recycler
     private fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val data = items[position]
         holder.apply {
-            textView.text = data.title
+            textView1.text = data.title
+            textView2.text = data.title2
+            textView3.text = data.title3
             deleteButton.setOnClickListener {
                 callback?.onClick(data)
             }
@@ -42,7 +44,9 @@ class CustomAdapter(private val context: Context): RecyclerView.Adapter<Recycler
     }
 
     class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val textView = view.textView
+        val textView1 = view.textView1
+        val textView2 = view.textView2
+        val textView3 = view.textView3
         val deleteButton = view.deleteButton
     }
 

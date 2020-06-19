@@ -5,10 +5,12 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 
-open class ListObject: RealmObject() {
+open class ListObject : RealmObject() {
     @PrimaryKey
-    var id : Long = System.currentTimeMillis()
+    var id: Long = System.currentTimeMillis()
     var title = ""
+    var title2 = ""
+    var title3 = ""
 
     companion object {
         fun findAll(): List<ListObject> =

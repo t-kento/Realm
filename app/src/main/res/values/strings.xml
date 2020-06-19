@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">realm-sample-app</string>
+    //<string name="app_name">realm-sample-app</string>
     <string name="form_hint">入力…</string>
     <string name="dialog_title">メモ</string>
     <string name="dialog_save_button">保存</string>
